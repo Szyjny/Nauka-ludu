@@ -1,0 +1,38 @@
+@media (max-width: 2560px) {
+  * {
+    font-size: 1.875rem;
+  }
+  body header span div h1 {
+    font-size: 3rem;
+  }
+  body header nav a {
+    font-size: 2.25rem;
+  }
+}
+@media (max-width: 2000px) {
+  * {
+    font-size: 1.5rem;
+  }
+  body header span div h1 {
+    font-size: 2.25rem;
+  }
+  body header nav a {
+    font-size: 1.875rem;
+  }
+}
+@media (max-width: 1214px) {
+  body section {
+    border-radius: 0;
+  }
+}
+@media (max-width: 425px) {
+  * {
+    font-size: 1.25rem;
+  }
+  body header span div h1 {
+    font-size: 1.875rem;
+  }
+  body header nav a {
+    font-size: 1.875rem;
+  }
+}/*# sourceMappingURL=media.css.map */

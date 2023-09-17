@@ -1,0 +1,219 @@
+// Importowanie z innego pliku zmiennych
+@use "./zmienne/colors.scss";
+@use "./zmienne/sizes.scss";
+
+// Style dla każdego elementu
+* {
+	font-family: "Nunito Sans", sans-serif;
+	line-height: 1.5;
+	font-size: sizes.$xl_3;
+	letter-spacing: -0.25px;
+	text-align: center;
+	text-decoration: none;
+	color: colors.$white;
+	margin: 0;
+	// outline: dashed 1.5px colors.$test; // <--- można odkomentować to
+
+	::selection {
+		background-color: colors.$dark;
+	}
+}
+
+// Miłej zabawy :>
+$sections_border_radius: 0.65em;
+$sections_box_shadow: 20px;
+$sections_hover_change_speed: 2s;
+$action_color_bg: #842fda;
+
+.flex_element {
+	display: flex;
+	justify-content: center;
+}
+
+.transparent-section-bg {
+	background-color: colors.$weak_shadow;
+	box-shadow: 0 0 $sections_box_shadow colors.$weak_shadow;
+	border: solid 1px colors.$weak_shadow;
+	transition: background-color $sections_hover_change_speed,
+		box-shadow $sections_hover_change_speed,
+		scale $sections_hover_change_speed;
+
+	&:hover {
+		background-color: colors.$shadow;
+		box-shadow: 0 0 calc($sections_box_shadow * 2) colors.$weak_shadow;
+	}
+}
+
+.bold_text {
+	font-weight: bold;
+}
+
+body {
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: linear-gradient(
+			300deg,
+			hsla(237, 100%, 50%, 0.3),
+			hsla(0, 0%, 0%, 0)
+		),
+		linear-gradient(
+			125deg,
+			colors.$brand_500,
+			colors.$brand_400,
+			colors.$brand_800
+		);
+
+	// Ustawia stle dla suwaka
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+	&::-webkit-scrollbar-track {
+		// Tło suwaka
+		background-color: hsl(170, 71%, 76%);
+	}
+	&::-webkit-scrollbar-thumb {
+		// Sam suwak
+		background-color: colors.$dark;
+	}
+
+	header,
+	footer {
+		height: 10svh;
+	}
+
+	header {
+		align-items: center;
+		border-bottom: solid 1px colors.$shadow;
+		margin-bottom: 12.5svh;
+
+		span {
+			height: 100%;
+			width: min(2000px, 100%);
+
+			.flex_element {
+				align-items: center;
+			}
+			#header_text_container {
+				margin-inline: auto;
+			}
+		}
+
+		h1 {
+			font-size: sizes.$xl_4;
+			transition: letter-spacing 1s;
+
+			&:hover {
+				letter-spacing: 0.075em;
+			}
+		}
+
+		nav {
+			align-items: center;
+			margin-right: min(5%, sizes.$xl_4);
+
+			a {
+				font-size: sizes.$xl_4;
+			}
+		}
+	}
+
+	footer {
+		border: none;
+		border-top: solid 1px colors.$shadow;
+
+		span {
+			align-items: center;
+		}
+	}
+
+	section {
+		margin-inline: auto;
+		margin-bottom: 12.5svh;
+		border-radius: $sections_border_radius;
+		padding: 1rem;
+
+		width: min(calc(1000px + 12.5vw), 100%);
+		min-height: 20svh;
+		transition: scale $sections_hover_change_speed;
+
+		&:hover {
+			scale: 1.01;
+		}
+	}
+
+	#TicTacToe_container {
+		display: grid;
+		grid-template-columns: 40% 60%;
+		grid-template-rows: 100%;
+		grid-template-areas: "TicTacToe_info TicTacToe_game";
+
+		#TicTacToe_info_container {
+			grid-area: TicTacToe_info;
+
+			#TicTacToe_info {
+				margin-top: 1.5em;
+				line-height: 1.75;
+				font-weight: 200;
+			}
+		}
+
+		#TicTacToe_game {
+			grid-area: TicTacToe_game;
+			align-items: center;
+			flex-direction: column;
+
+			span {
+				margin-block: 3.5svh;
+				width: 80%;
+
+				.TicTacToe_block {
+					cursor: pointer;
+					align-items: center;
+					border-radius: 0.25em;
+					margin: 1.5%;
+					width: 30%;
+					height: 10svh;
+					align-self: center;
+					float: right;
+
+					$TicTacToe_block_box-shadow_size: 10px;
+					transition: scale 1s;
+
+					&:hover {
+						scale: 1.1;
+					}
+
+					&.selected_by_X {
+						background: linear-gradient(70deg, #c95454, #d57272);
+						box-shadow: 0 0 $TicTacToe_block_box-shadow_size #c95454;
+					}
+					&.selected_by_O {
+						background: linear-gradient(70deg, #5ebf92, #89e4b9);
+						box-shadow: 0 0 $TicTacToe_block_box-shadow_size #5ebf92;
+					}
+					&.unselected {
+						background: linear-gradient(70deg, #979797, #c3c1c1);
+						box-shadow: 0 0 $TicTacToe_block_box-shadow_size #979797;
+					}
+				}
+			}
+		}
+	}
+
+	#Hero_creator_container {
+		align-items: center;
+	}
+}
+
+a {
+	cursor: pointer;
+	padding-inline: 0.2em;
+	border-radius: 0.2em;
+	transition: background-color 0.9s, text-shadow 0.9s, box-shadow 0.9s;
+
+	&:is(:hover, :focus) {
+		background-color: $action_color_bg;
+		box-shadow: 0 0 15px $action_color_bg;
+		text-shadow: 0 0 2.5px currentColor;
+	}
+}

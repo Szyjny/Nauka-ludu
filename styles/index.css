@@ -1,0 +1,167 @@
+* {
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 1.5;
+  font-size: 1.875rem;
+  letter-spacing: -0.25px;
+  text-align: center;
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+  margin: 0;
+}
+* ::-moz-selection {
+  background-color: hsl(0, 1%, 14%);
+}
+* ::selection {
+  background-color: hsl(0, 1%, 14%);
+}
+
+.flex_element {
+  display: flex;
+  justify-content: center;
+}
+
+.transparent-section-bg {
+  background-color: hsla(0, 0%, 0%, 0.25);
+  box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.25);
+  border: solid 1px hsla(0, 0%, 0%, 0.25);
+  transition: background-color 2s, box-shadow 2s, scale 2s;
+}
+.transparent-section-bg:hover {
+  background-color: hsla(0, 0%, 0%, 0.5);
+  box-shadow: 0 0 40px hsla(0, 0%, 0%, 0.25);
+}
+
+.bold_text {
+  font-weight: bold;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: linear-gradient(300deg, hsla(237, 100%, 50%, 0.3), hsla(0, 0%, 0%, 0)), linear-gradient(125deg, hsl(160, 84%, 39%), hsl(158, 64%, 52%), hsl(163, 88%, 20%));
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-color: hsl(170, 71%, 76%);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 1%, 14%);
+}
+body header,
+body footer {
+  height: 10svh;
+}
+body header {
+  align-items: center;
+  border-bottom: solid 1px hsla(0, 0%, 0%, 0.5);
+  margin-bottom: 12.5svh;
+}
+body header span {
+  height: 100%;
+  width: min(2000px, 100%);
+}
+body header span .flex_element {
+  align-items: center;
+}
+body header span #header_text_container {
+  margin-inline: auto;
+}
+body header h1 {
+  font-size: 2.25rem;
+  transition: letter-spacing 1s;
+}
+body header h1:hover {
+  letter-spacing: 0.075em;
+}
+body header nav {
+  align-items: center;
+  margin-right: min(5%, 2.25rem);
+}
+body header nav a {
+  font-size: 2.25rem;
+}
+body footer {
+  border: none;
+  border-top: solid 1px hsla(0, 0%, 0%, 0.5);
+}
+body footer span {
+  align-items: center;
+}
+body section {
+  margin-inline: auto;
+  margin-bottom: 12.5svh;
+  border-radius: 0.65em;
+  padding: 1rem;
+  width: min(1000px + 12.5vw, 100%);
+  min-height: 20svh;
+  transition: scale 2s;
+}
+body section:hover {
+  scale: 1.01;
+}
+body #TicTacToe_container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 100%;
+  grid-template-areas: "TicTacToe_info TicTacToe_game";
+}
+body #TicTacToe_container #TicTacToe_info_container {
+  grid-area: TicTacToe_info;
+}
+body #TicTacToe_container #TicTacToe_info_container #TicTacToe_info {
+  margin-top: 1.5em;
+  line-height: 1.75;
+  font-weight: 200;
+}
+body #TicTacToe_container #TicTacToe_game {
+  grid-area: TicTacToe_game;
+  align-items: center;
+  flex-direction: column;
+}
+body #TicTacToe_container #TicTacToe_game span {
+  margin-block: 3.5svh;
+  width: 80%;
+}
+body #TicTacToe_container #TicTacToe_game span .TicTacToe_block {
+  cursor: pointer;
+  align-items: center;
+  border-radius: 0.25em;
+  margin: 1.5%;
+  width: 30%;
+  height: 10svh;
+  align-self: center;
+  float: right;
+  transition: scale 1s;
+}
+body #TicTacToe_container #TicTacToe_game span .TicTacToe_block:hover {
+  scale: 1.1;
+}
+body #TicTacToe_container #TicTacToe_game span .TicTacToe_block.selected_by_X {
+  background: linear-gradient(70deg, #c95454, #d57272);
+  box-shadow: 0 0 10px #c95454;
+}
+body #TicTacToe_container #TicTacToe_game span .TicTacToe_block.selected_by_O {
+  background: linear-gradient(70deg, #5ebf92, #89e4b9);
+  box-shadow: 0 0 10px #5ebf92;
+}
+body #TicTacToe_container #TicTacToe_game span .TicTacToe_block.unselected {
+  background: linear-gradient(70deg, #979797, #c3c1c1);
+  box-shadow: 0 0 10px #979797;
+}
+body #Hero_creator_container {
+  align-items: center;
+}
+
+a {
+  cursor: pointer;
+  padding-inline: 0.2em;
+  border-radius: 0.2em;
+  transition: background-color 0.9s, text-shadow 0.9s, box-shadow 0.9s;
+}
+a:is(:hover, :focus) {
+  background-color: #842fda;
+  box-shadow: 0 0 15px #842fda;
+  text-shadow: 0 0 2.5px currentColor;
+}/*# sourceMappingURL=index.css.map */

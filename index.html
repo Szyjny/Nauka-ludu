@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Linki do fontu/czcionki z strony "https://fonts.google.com/" -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,400&display=swap"
+      rel="stylesheet">
+
+   <link rel="shortcut icon" href="./pictures/ikona.ico" type="image/x-icon">
+   <link rel="stylesheet" href="./styles/index.css">
+   <link rel="stylesheet" href="./styles/media.css">
+   <!--  "defer" sprawia że to połączenie odbywa się po załadowaniu body
+         "type="module"" pozwala plikowi na importowanie rzeczy z innych plików" -->
+   <script defer type="module" src="scripts/index.js"></script>
+
+   <title>Przypomnienie</title>
+</head>
+
+<body>
+   <header class="flex_element transparent-section-bg">
+      <span id="header_cointainer" class="flex_element">
+         <div id="header_text_container" class="flex_element">
+            <h1>Hello</h1>
+         </div>
+         <nav class="flex_element"><a href="https://github.com/Szyjny/Przypominajka" target="_blank">GitHub</a></nav>
+      </span>
+   </header>
+
+   <main>
+      <section id="TicTacToe_container" class="transparent-section-bg">
+         <div id="TicTacToe_info_container">
+            <p class="bold_text">Tic Tac Toe</p>
+            <p id="TicTacToe_info">Tutaj pokarzę ci jak łapać elementy, dodawać słuchaczy akcji, i pare innych
+               przydatnych tricków 🍷</p>
+         </div>
+         <div id="TicTacToe_game" class="flex_element">
+            <p id="TicTacToe_score">0 : 0</p>
+            <span>
+               <div id="TicTacToe_block_0" class="TicTacToe_block flex_element unselected">
+                  <p id="TicTacToe_block_value" title="?">X</p>
+               </div>
+               <div id="TicTacToe_block_1" class="TicTacToe_block flex_element unselected">
+                  <p id="TicTacToe_block_value" title="?">X</p>
+               </div>
+               <div id="TicTacToe_block_2" class="TicTacToe_block flex_element unselected">
+                  <p id="TicTacToe_block_value" title="?">X</p>
+               </div> <br>
+               <div id="TicTacToe_block_3" class="TicTacToe_block flex_element unselected">
+                  <p id="TicTacToe_block_value" title="?">X</p>
+               </div>
+               <div id="TicTacToe_block_4" class="TicTacToe_block flex_element unselected">
+                  <p id="TicTacToe_block_value" title="?">X</p>
+               </div>
+               <div id="TicTacToe_block_5" class="TicTacToe_block flex_element unselected">
+                  <p id="TicTacToe_block_value" title="?">X</p>
+               </div> <br>
+               <div id="TicTacToe_block_6" class="TicTacToe_block flex_element unselected">
+                  <p id="TicTacToe_block_value" title="?">X</p>
+               </div>
+               <div id="TicTacToe_block_7" class="TicTacToe_block flex_element unselected">
+                  <p id="TicTacToe_block_value" title="?" valueAs>X</p>
+               </div>
+               <div id="TicTacToe_block_8" class="TicTacToe_block flex_element unselected">
+                  <p id="TicTacToe_block_value" title="?">X</p>
+               </div>
+            </span>
+         </div>
+      </section>
+
+      <section id="Hero_creator_container" class="flex_element transparent-section-bg">
+         <h1>Coming Soon</h1>
+      </section>
+   </main>
+
+   <footer class="flex_element transparent-section-bg">
+      <span class="flex_element">
+         <h2>Przypominajki koniec</h2>
+      </span>
+   </footer>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+@use "./zmienne/sizes.scss";
+
+// To są bloki odpowiedzialne za skalowanie się strony wraz z zmianą wielkości ekranu
+// w "()" podajemy warunek, który ma się spełnić, jeżeli sie spełni to style zawarte w bloku
+// "@media" się wykona
+@media (max-width: 2560px) {
+	* {
+		font-size: sizes.$xl_3;
+	}
+
+	body {
+		header {
+			span {
+				div {
+					h1 {
+						font-size: sizes.$xl_5;
+					}
+				}
+			}
+
+			nav {
+				a {
+					font-size: sizes.$xl_4;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 2000px) {
+	* {
+		font-size: sizes.$xl_2;
+	}
+
+	body {
+		header {
+			span {
+				div {
+					h1 {
+						font-size: sizes.$xl_4;
+					}
+				}
+			}
+
+			nav {
+				a {
+					font-size: sizes.$xl_3;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1214px) {
+	body {
+		section {
+			border-radius: 0;
+		}
+	}
+}
+
+@media (max-width: 425px) {
+	* {
+		font-size: sizes.$xl;
+	}
+
+	body {
+		header {
+			span {
+				div {
+					h1 {
+						font-size: sizes.$xl_3;
+					}
+				}
+			}
+
+			nav {
+				a {
+					font-size: sizes.$xl_3;
+				}
+			}
+		}
+	}
+}
